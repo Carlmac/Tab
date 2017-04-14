@@ -1,5 +1,5 @@
 # Tab
-快速将 HTML 变成一个可切换的 Tab
+快速生成一个 Tab 组件
 
 ### 在线预览(Demo)
 [live demo](https://carlmac.github.io/Tab/Tab.html)

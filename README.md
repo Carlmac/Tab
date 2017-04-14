@@ -2,7 +2,7 @@
 快速将 HTML 变成一个可切换的 Tab
 
 ### 在线预览(Demo)
-[live demo]()
+[live demo](https://carlmac.github.io/Tab/Tab.html)
 
 ### 依赖(dependencies)
 - 不需要 jQuery, no requirement for jQuery

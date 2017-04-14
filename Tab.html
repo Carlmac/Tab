@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tab</title>
+  <style>
+  #tab-demo {
+    width: 500px;
+    margin: 200px auto;
+  }
+  .tab {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+  }
+  .tab .tab-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: center;
+  }
+  .tab .tab-nav > li {
+    flex-grow: 1;
+    border-right: 1px solid #aaa;
+    line-height: 2.5;
+    list-style: none;
+    cursor: pointer;
+  }
+  .tab .tab-nav > li:last-child {
+    border-right: none;
+  }
+  .tab .tab-nav > li.active {
+    background-color: #ccc;
+  }
+  .tab .tab-nav > li:hover {
+    background-color: #ddd;
+  }
+  .tab .tab-body > div {
+    display: none;
+    min-height: 100px;
+  }
+  .tab .tab-body > div.active {
+    display: block;
+  }
+  </style>
+</head>
+<body>
+  <div class="tab" id="tab-demo">
+    <ul class="tab-nav">
+      <li class="active">tab 1</li>
+      <li>tab 2</li>
+      <li>tab 3</li>
+    </ul>
+    <div class="tab-body">
+      <div class="active">content 1</div>
+      <div>content 2</div>
+      <div>content 3</div>
+    </div>
+  </div>
+<script>
+
+var Tab = (function() {
+
+  function _Tab(tabSelector) {
+    this.container = document.querySelector(tabSelector);
+    this.tabNavs = this.container.querySelectorAll('.tab-nav > li');
+    this.tabBodies = this.container.querySelectorAll('.tab-body > div');
+    this.currentIndex = 0;
+    this.bind();
+  }
+  _Tab.prototype.showPanel = function (index) {
+    if (index === this.currentIndex) {
+      return;
+    }
+    this.tabNavs[this.currentIndex].classList.remove('active');
+    this.tabBodies[this.currentIndex].classList.remove('active');
+    this.tabNavs[index].classList.add('active');
+    this.tabBodies[index].classList.add('active');
+    this.currentIndex = index;
+  }
+  _Tab.prototype.bind = function () {
+    var _this = this;
+    for (var i = 0; i < this.tabNavs.length; i++) {
+      this.tabNavs[i].addEventListener('click', function() {
+        var index = [].indexOf.call(_this.tabNavs, this);
+        _this.showPanel(index);
+        _this.currentIndex = index;
+      }, false);
+    }
+  }
+
+  return {
+    init: function(container) {
+      new _Tab(container);
+    }
+  }
+
+})();
+
+
+Tab.init('#tab-demo');
+
+</script>
+</body>
+</html>

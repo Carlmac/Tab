@@ -28,8 +28,21 @@
 </div>
 ````
 
-#### JS
+#### CSS
 
+insert CSS file in the head
+````
+<link rel="stylesheet" href="css/Tab.css">
+````
+
+#### Javascript
+
+Insert Javascript file
+````
+<script src="js/Tab.js"></script>
+````
+
+And then initialize
 ````
 Tab.init('#tab-id');
 ````

@@ -13,7 +13,7 @@ Tab 组件
 ### 用法(Usage)
 
 #### HTML
-`
+````
 <div class="tab" id="tab-id">
   <ul class="tab-nav">
     <li class="active">tab 1</li>
@@ -26,10 +26,10 @@ Tab 组件
     <div>content 3</div>
   </div>
 </div>
-`
+````
 
 #### JS
 
-`
+````
 Tab.init('#tab-id');
-`
+````

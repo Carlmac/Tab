@@ -13,8 +13,10 @@
 ### 用法(Usage)
 
 #### HTML
+
+give the tab an id, here is `tab-demo`
 ````
-<div class="tab" id="tab-id">
+<div class="tab" id="tab-demo">
   <ul class="tab-nav">
     <li class="active">tab 1</li>
     <li>tab 2</li>
@@ -42,7 +44,7 @@ Insert Javascript file
 <script src="js/Tab.js"></script>
 ````
 
-And then initialize
+And then initialize using it's id
 ````
-Tab.init('#tab-id');
+Tab.init('#tab-demo');
 ````

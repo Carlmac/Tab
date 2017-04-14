@@ -1,14 +1,14 @@
 # Tab
-Tab 组件
+快速将 HTML 变成一个可切换的 Tab
+
+### 在线预览(Demo)
+[live demo]()
 
 ### 依赖(dependencies)
 - 不需要 jQuery, no requirement for jQuery
 
 ### 兼容性(compatability)
 - IE 11+
-
-### 在线预览(Demo)
-[live demo]()
 
 ### 用法(Usage)
 
